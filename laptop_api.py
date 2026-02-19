@@ -22,8 +22,6 @@ def shutdown():
     return jsonify({"status": "Shutdown in 30 seconds"})
 
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
 @app.route("/open-chrome")
 def open_chrome():
     os.system("start chrome")
@@ -33,3 +31,5 @@ def open_chrome():
 def lock():
     os.system("rundll32.exe user32.dll,LockWorkStation")
     return jsonify({"status": "Laptop Locked"})
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
